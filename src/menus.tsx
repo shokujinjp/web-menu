@@ -19,7 +19,7 @@ export class Menus extends React.Component<any, State> {
   private getMenu = (time: string) => 
     fetch(this.baseURL + time)
       .then(res => res.json())
-      .then(json => this.setState(menus: json as Menu[]))
+      .then(json => this.setState({menus: json as Menu[]}))
   );
 
   componentDidMount() {
@@ -28,7 +28,7 @@ export class Menus extends React.Component<any, State> {
 
   render() {
     return (
-      <div>{this.state.menus}</div>
+      <div>{JSON.stringify(this.state.menus)}</div>
     )
   }
 }
