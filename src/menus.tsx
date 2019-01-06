@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as axios from "axios";
 import { Menu } from "./types";
+import { MenuCard } from "./card";
 
 interface State {
   menus: Menu[];
@@ -28,7 +29,14 @@ export class Menus extends React.Component<any, State> {
 
   render() {
     return (
-      <div>{JSON.stringify(this.state.menus)}</div>
+      <div>
+        {this.state.menus.map((menu: Menu) => {
+          return <MenuCard name={menu.name}
+                           price={menu.price}
+                           category={menu.category}
+                           description={menu.description} />
+        })}
+      </div>
     )
   }
 }
