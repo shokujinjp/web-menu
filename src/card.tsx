@@ -10,10 +10,10 @@ export class MenuCard extends React.Component<CardProps, CardState> {
     super(props);
 
     this.state = {
-      name: this.props.name
-      price: this.props.price
-      category: this.props.category
-      description: this.props.description
+      name: this.props.name,
+      price: this.props.price,
+      category: this.props.category,
+      description: this.props.description,
     }
   }
 
