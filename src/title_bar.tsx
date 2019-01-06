@@ -12,7 +12,13 @@ const styles = {
   }
 };
 
-function TitleBar(props) {
+interface Props {
+  classes: {
+    root: any;
+  };
+}
+
+function TitleBar(props: Props) {
   const { classes } = props;
 
   return (
@@ -27,9 +33,5 @@ function TitleBar(props) {
     </div>
   );
 }
-
-TitleBar.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(TitleBar);

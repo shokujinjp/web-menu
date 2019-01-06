@@ -5,4 +5,9 @@ interface CardProps {
   description: string;
 }
 
-interface CardState {}
+interface CardState {
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+}
