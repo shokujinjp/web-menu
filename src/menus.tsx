@@ -31,7 +31,8 @@ export class Menus extends React.Component<any, State> {
     return (
       <div>
         {this.state.menus.map((menu: Menu) => {
-          return <MenuCard name={menu.name}
+          return <MenuCard key={menu.id}
+                           name={menu.name}
                            price={menu.price}
                            category={menu.category}
                            description={menu.description} />
