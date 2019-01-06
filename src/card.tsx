@@ -1,9 +1,22 @@
-/// <reference path="./card.d.ts" />
-
 import * as React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+
+interface CardProps {
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+}
+
+interface CardState {
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+}
+
 
 export class MenuCard extends React.Component<CardProps, CardState> {
   constructor(props: CardProps) {
