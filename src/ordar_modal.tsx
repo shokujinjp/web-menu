@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import { withStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
+import TextField from "@material-ui/core/TextField";
 import { LineIcon } from "react-share";
 
 function getModalStyle() {
@@ -21,11 +22,14 @@ interface Props {
   cart: Menu[];
   classes: {
     paper: string;
+    textField: string;
   };
 }
 
 interface State {
+  name: string;
   open: boolean;
+  msg: string;
 }
 
 const styles = (theme: Theme) =>
@@ -36,6 +40,10 @@ const styles = (theme: Theme) =>
       boxShadow: theme.shadows[5],
       padding: theme.spacing.unit * 4,
       outline: "none"
+    },
+    textField: {
+      marginLeft: 1,
+      marginRight: 1
     }
   });
 
@@ -43,14 +51,34 @@ class OrdarModal extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      open: this.props.open
+      name: "",
+      open: this.props.open,
+      msg: ""
     };
   }
 
-  orderMsg = (name: string) => {
+  handleMsg() {
+    this.setState({
+      msg: event.target.value
+    });
+
+    return event;
+  }
+
+  defaultMsg(menus: Menu[]) {
     // nullチェックする
-    return "https://line.me/R/msg/text?" + name + "をお願いします";
-  };
+    var msg = "席番号: \n\n";
+    menus.map((menu: Menu) => {
+      msg += menu.name + "\n";
+    });
+
+    return msg;
+  }
+
+  TolineMsgURL(msg: string) {
+    // nullチェックする
+    return "https://line.me/R/msg/text?" + encodeURIComponent(msg);
+  }
 
   render() {
     const { classes } = this.props;
@@ -65,12 +93,24 @@ class OrdarModal extends React.Component<Props, State> {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
-              を注文する
+              送信文章編集
             </Typography>
+            <TextField
+              id="outlined-multiline-flexible"
+              label="この文章がそのまま送信されます"
+              multiline
+              rows="4"
+              fullWidth={true}
+              value={this.defaultMsg(this.props.cart)}
+              onChange={this.handleMsg}
+              className={classes.textField}
+              margin="none"
+              variant="outlined"
+            />
+
             <Typography variant="subtitle1" id="simple-modal-description">
-              LINEで注文
-              <a href={this.orderMsg(this.props.cart[0].name)}>
-                <LineIcon size={32} round />
+              <a href={this.TolineMsgURL(this.defaultMsg(this.props.cart))}>
+                LINEで送る: <LineIcon size={32} round />
               </a>
             </Typography>
           </div>
