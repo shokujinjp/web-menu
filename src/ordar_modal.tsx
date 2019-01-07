@@ -103,7 +103,9 @@ class OrdarModal extends React.Component<Props, State> {
 
             <div>
               <Typography variant="subtitle1" id="simple-modal-description">
-                <a href={this.TolineMsgURL(this.state.msg)}>LINEで送る</a>
+                <a href={this.TolineMsgURL(this.state.msg)}>
+                  LINEで送る (食神アカウントを選択して送信してください)
+                </a>
               </Typography>
             </div>
           </div>
