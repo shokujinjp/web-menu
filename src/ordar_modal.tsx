@@ -53,6 +53,8 @@ class OrdarModal extends React.Component<Props, State> {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
       <div>
         <Modal
@@ -61,7 +63,7 @@ class OrdarModal extends React.Component<Props, State> {
           open={this.state.open}
           onClose={this.props.onClose}
         >
-          <div style={getModalStyle()}>
+          <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
               を注文する
             </Typography>
