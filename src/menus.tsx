@@ -1,15 +1,17 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
-import * as axios from "axios";
 import { Menu } from "./types";
-import { MenuCard } from "./card";
+import { MenuCard } from "./menu_card";
+
+interface Props {
+  addCartFunc(arg0: Menu): void;
+}
 
 interface State {
   menus: Menu[];
 }
 
-export class Menus extends React.Component<any, State> {
-  constructor(props: any) {
+export class Menus extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       menus: []
@@ -30,7 +32,13 @@ export class Menus extends React.Component<any, State> {
     return (
       <div>
         {this.state.menus.map((menu: Menu) => {
-          return <MenuCard key={menu.id} menu={menu} />;
+          return (
+            <MenuCard
+              key={menu.id}
+              menu={menu}
+              addCartFunc={this.props.addCartFunc}
+            />
+          );
         })}
       </div>
     );

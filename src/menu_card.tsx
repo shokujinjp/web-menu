@@ -4,10 +4,10 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 import { Menu } from "./types";
-import SimpleModal from "./modal";
 
 interface CardProps {
   menu: Menu;
+  addCartFunc(arg0: Menu): void;
 }
 
 interface CardState {
@@ -17,30 +17,6 @@ interface CardState {
 export class MenuCard extends React.Component<CardProps, CardState> {
   constructor(props: CardProps) {
     super(props);
-
-    this.state = {
-      renderModal: false
-    };
-  }
-
-  handleModalOpen = () => {
-    this.setState({ renderModal: true });
-  };
-
-  handleModalClose = () => {
-    this.setState({ renderModal: false });
-  };
-
-  _render() {
-    if (this.state.renderModal == true) {
-      return (
-        <SimpleModal
-          open={true}
-          onClose={this.handleModalClose}
-          menu={this.props.menu}
-        />
-      );
-    }
   }
 
   render() {
@@ -54,7 +30,7 @@ export class MenuCard extends React.Component<CardProps, CardState> {
 
     return (
       <div>
-        <Card onClick={this.handleModalOpen}>
+        <Card onClick={() => this.props.addCartFunc(this.props.menu)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               {des}
@@ -67,7 +43,6 @@ export class MenuCard extends React.Component<CardProps, CardState> {
             </Typography>
           </CardContent>
         </Card>
-        {this._render()}
       </div>
     );
   }

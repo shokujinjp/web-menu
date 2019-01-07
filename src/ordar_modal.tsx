@@ -4,8 +4,6 @@ import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import { LineIcon } from "react-share";
 
-import { Menu } from "./types";
-
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -34,14 +32,14 @@ interface Props {
 
   open: boolean;
   onClose: any;
-  menu: Menu;
+  cart: Menu[];
 }
 
 interface State {
   open: boolean;
 }
 
-export class SimpleModal extends React.Component<Props, State> {
+export class OrdarModal extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -50,6 +48,7 @@ export class SimpleModal extends React.Component<Props, State> {
   }
 
   orderMsg = (name: string) => {
+    // チェックする
     return "https://line.me/R/msg/text?" + name + "をお願いします";
   };
 
@@ -64,13 +63,13 @@ export class SimpleModal extends React.Component<Props, State> {
           open={this.state.open}
           onClose={this.props.onClose}
         >
-          <div style={getModalStyle()} className={classes.paper}>
+          <div style={getModalStyle()}>
             <Typography variant="h6" id="modal-title">
-              {this.props.menu.name} を注文する ({this.props.menu.price}円)
+              を注文する
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
               LINEで注文
-              <a href={this.orderMsg(this.props.menu.name)}>
+              <a href={this.orderMsg(this.props.cart[0].name)}>
                 <LineIcon size={32} round />
               </a>
             </Typography>
@@ -81,6 +80,6 @@ export class SimpleModal extends React.Component<Props, State> {
   }
 }
 // We need an intermediary variable for handling the recursive nesting.
-const SimpleModalWrapped = withStyles(styles)(SimpleModal);
+const OrdarModalWrapped = withStyles(styles)(OrdarModal);
 
-export default SimpleModalWrapped;
+export default OrdarModalWrapped;
