@@ -2,7 +2,6 @@ import * as React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
-import Button from "@material-ui/core/Button";
 import { LineIcon } from "react-share";
 
 import { Menu } from "./types";
@@ -67,15 +66,14 @@ export class SimpleModal extends React.Component<Props, State> {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
-              ここに料理名が入る
+              {this.props.menu.name} を注文する ({this.props.menu.price}円)
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
               LINEで注文
-              <a href={this.orderMsg("料理名")}>
+              <a href={this.orderMsg(this.props.menu.name)}>
                 <LineIcon size={32} round />
               </a>
             </Typography>
-            <SimpleModalWrapped />
           </div>
         </Modal>
       </div>
