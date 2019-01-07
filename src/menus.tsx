@@ -17,26 +17,22 @@ export class Menus extends React.Component<any, State> {
   }
 
   private baseURL = "https://api.shokujin.jp/menu/";
-  private getMenu = (time: string) => 
+  private getMenu = (time: string) =>
     fetch(this.baseURL + time)
       .then(res => res.json())
-      .then(json => this.setState({menus: json as Menu[]}));
+      .then(json => this.setState({ menus: json as Menu[] }));
 
   componentDidMount() {
-    this.getMenu("today")
+    this.getMenu("today");
   }
 
   render() {
     return (
       <div>
         {this.state.menus.map((menu: Menu) => {
-          return <MenuCard key={menu.id}
-                           name={menu.name}
-                           price={menu.price}
-                           category={menu.category}
-                           description={menu.description} />
+          return <MenuCard key={menu.id} menu={menu} />;
         })}
       </div>
-    )
+    );
   }
 }
