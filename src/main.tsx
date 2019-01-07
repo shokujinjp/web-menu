@@ -5,6 +5,7 @@ import yellow from "@material-ui/core/colors/yellow";
 
 import { Menu } from "./types";
 import { Menus } from "./menus";
+import { StyledOrdarModal } from "./ordar_modal";
 import TitleBar from "./title_bar";
 
 const theme = createMuiTheme({
@@ -21,14 +22,16 @@ const theme = createMuiTheme({
 
 interface State {
   cart: Menu[];
+  renderOrdarModal: boolean;
 }
 
-class Main extends React.Component<any, State> {
+class Main extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
 
     this.state = {
-      cart: []
+      cart: [],
+      renderOrdarModal: false
     };
   }
 
@@ -38,11 +41,36 @@ class Main extends React.Component<any, State> {
     });
   };
 
+  handleOrdarModalOpen = () => {
+    this.setState({ renderOrdarModal: true });
+  };
+
+  handleOrdarModalClose = () => {
+    this.setState({ renderOrdarModal: false });
+  };
+
+  _renderOrdarModal() {
+    if (this.state.renderOrdarModal == true) {
+      return (
+        <StyledOrdarModal
+          open={true}
+          onClose={this.handleOrdarModalClose}
+          cart={this.state.cart}
+        />
+      );
+    }
+  }
+
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <TitleBar cart={this.state.cart} />
+        <TitleBar
+          cart={this.state.cart}
+          handleModalOpen={this.handleOrdarModalOpen}
+        />
         <Menus addCartFunc={this.addCart} />
+
+        {this._renderOrdarModal()}
       </MuiThemeProvider>
     );
   }

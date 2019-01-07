@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -6,80 +6,60 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 
-import { OrdarModal } from "./ordar_modal";
+interface Props {
+  cart: Menu[];
+  handleModalOpen(): void;
+}
 
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-  grow: {
-    flexGrow: 1
-  }
+const rootStyle: CSSProperties = {
+  flexGrow: 0
 };
 
-interface Props {
-  classes: {
-    root: any;
-    grow: any;
-  };
+const growStyle: CSSProperties = {
+  flexGrow: 1
+};
 
-  cart: Menu[];
-}
-
-interface State {
-  renderModal: boolean;
-}
-
-export class TitleBar extends React.Component<Props, any> {
+export default class TitleBar extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-
-    this.state = {
-      renderModal: false
-    };
-  }
-
-  handleModalOpen = () => {
-    this.setState({ renderModal: true });
-  };
-
-  handleModalClose = () => {
-    this.setState({ renderModal: false });
-  };
-
-  _render() {
-    if (this.state.renderModal == true) {
-      return (
-        <OrdarModal
-          class={}
-          open={true}
-          onClose={this.handleModalClose}
-          cart={this.props.cart}
-        />
-      );
-    }
   }
 
   render() {
-    const { classes } = this.props;
-
+    // mizdra: 原因分かった `flexGrow` が `flexGlow` になってた. typoっぽい <= なおした
+    // whywaita: oh......
+    // whywaita: kami
+    // naotta!!!!!!!
+    // whywaita: mizdra :pro:
+    // mizdra: style object に CSSPropertiesの型を指定すると型補完効くようになる :tada:
+    // whywaita: なるほど、これでいいのか… (黒魔術感がある)
+    // whywaita: anyよくないですね
+    // whywaita: これおもしろ
+    // mizdra: Stateに型当てます
+    // whywaita: 最初title_barでmodal出してたんだけど位置調整が面倒になってmainで出すようになったんよね
+    // mizdra: なるほど, だとするとtitle_barではstate不要ですかね?
+    // whywaita: たぶんそうー (いらないのでanyで潰してたけど、空で潰す方が良いのかな?) <= mizdra: そうですね <= whywaita: ok
+    // whywaita: まあのちのちハンバーガーメニューとかやりそうだし使いそう感はあるけどね
+    // hogas: 今使ってなかったら雛形だけ残しておくと良さそう(boolのやつだけ消す)
+    // mizdra: React.Component<Props> でState使わないことを明示的できるというテクニックがある <= whywaita: yosasou
+    // hogas: Propsが空でStateはあるときってPropsのとこは `{}` とかにするんですか
+    // mizdra: いつもそんな感じでやってます
     return (
-      <div className={classes.root}>
+      <div style={growStyle}>
         <AppBar position="static" color="primary">
           <Toolbar>
-            <Typography variant="h4" color="inherit" className={classes.grow}>
+            <Typography variant="h4" color="inherit" style={growStyle}>
               今日の食神
             </Typography>
-            <Button color="inherit" onClick={this.handleModalOpen}>
+            <Button
+              color="inherit"
+              onClick={() => this.props.handleModalOpen()}
+              style={rootStyle}
+            >
               <Icon>shopping_cart</Icon>
             </Button>
           </Toolbar>
         </AppBar>
-
-        {this._render()}
       </div>
     );
   }
 }
-
-export default withStyles(styles)(TitleBar);
