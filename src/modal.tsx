@@ -3,6 +3,9 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
+import { LineIcon } from "react-share";
+
+import { Menu } from "./types";
 
 function getModalStyle() {
   const top = 50;
@@ -33,6 +36,7 @@ interface Props {
 
   open: boolean;
   onClose: any;
+  menu: Menu;
 }
 
 interface State {
@@ -47,6 +51,10 @@ export class SimpleModal extends React.Component<Props, State> {
     };
   }
 
+  orderMsg = (name: string) => {
+    return "https://line.me/R/msg/text?" + name + "をお願いします";
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -60,10 +68,13 @@ export class SimpleModal extends React.Component<Props, State> {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
-              Text in a modal
+              ここに料理名が入る
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              LINEで注文
+              <a href={this.orderMsg("料理名")}>
+                <LineIcon size={32} round />
+              </a>
             </Typography>
             <SimpleModalWrapped />
           </div>

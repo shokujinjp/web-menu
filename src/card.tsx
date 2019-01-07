@@ -33,7 +33,13 @@ export class MenuCard extends React.Component<CardProps, CardState> {
 
   _render() {
     if (this.state.renderModal == true) {
-      return <SimpleModal open={true} onClose={this.handleModalClose} />;
+      return (
+        <SimpleModal
+          open={true}
+          onClose={this.handleModalClose}
+          menu={this.props.menu}
+        />
+      );
     }
   }
 
