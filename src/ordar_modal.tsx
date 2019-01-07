@@ -27,7 +27,6 @@ interface Props {
 }
 
 interface State {
-  name: string;
   open: boolean;
   msg: string;
 }
@@ -36,9 +35,10 @@ const styles = (theme: Theme) =>
   createStyles({
     paper: {
       position: "absolute",
+      width: "70%",
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
-      padding: theme.spacing.unit * 4,
+      padding: theme.spacing.unit * 1,
       outline: "none"
     },
     textField: {
@@ -51,26 +51,19 @@ class OrdarModal extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      name: "",
       open: this.props.open,
-      msg: ""
+      msg: this.defaultMsg(this.props.cart)
     };
-  }
-
-  handleMsg() {
-    this.setState({
-      msg: event.target.value
-    });
-
-    return event;
   }
 
   defaultMsg(menus: Menu[]) {
     // nullチェックする
-    var msg = "席番号: \n\n";
+    var msg = "席番号: \nメニュー:\n";
     menus.map((menu: Menu) => {
-      msg += menu.name + "\n";
+      msg += "- " + menu.name + "\n";
     });
+
+    msg += "をお願いします。";
 
     return msg;
   }
@@ -97,22 +90,22 @@ class OrdarModal extends React.Component<Props, State> {
             </Typography>
             <TextField
               id="outlined-multiline-flexible"
-              label="この文章がそのまま送信されます"
+              helperText="この文章がそのまま送信されます"
               multiline
-              rows="4"
-              fullWidth={true}
-              value={this.defaultMsg(this.props.cart)}
-              onChange={this.handleMsg}
+              rows="6"
+              fullWidth
+              value={this.state.msg}
+              onChange={e => this.setState({ msg: e.target.value })}
               className={classes.textField}
               margin="none"
               variant="outlined"
             />
 
-            <Typography variant="subtitle1" id="simple-modal-description">
-              <a href={this.TolineMsgURL(this.defaultMsg(this.props.cart))}>
-                LINEで送る: <LineIcon size={32} round />
-              </a>
-            </Typography>
+            <div>
+              <Typography variant="subtitle1" id="simple-modal-description">
+                <a href={this.TolineMsgURL(this.state.msg)}>LINEで送る</a>
+              </Typography>
+            </div>
           </div>
         </Modal>
       </div>
