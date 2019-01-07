@@ -25,24 +25,6 @@ export default class TitleBar extends React.Component<Props> {
   }
 
   render() {
-    // mizdra: 原因分かった `flexGrow` が `flexGlow` になってた. typoっぽい <= なおした
-    // whywaita: oh......
-    // whywaita: kami
-    // naotta!!!!!!!
-    // whywaita: mizdra :pro:
-    // mizdra: style object に CSSPropertiesの型を指定すると型補完効くようになる :tada:
-    // whywaita: なるほど、これでいいのか… (黒魔術感がある)
-    // whywaita: anyよくないですね
-    // whywaita: これおもしろ
-    // mizdra: Stateに型当てます
-    // whywaita: 最初title_barでmodal出してたんだけど位置調整が面倒になってmainで出すようになったんよね
-    // mizdra: なるほど, だとするとtitle_barではstate不要ですかね?
-    // whywaita: たぶんそうー (いらないのでanyで潰してたけど、空で潰す方が良いのかな?) <= mizdra: そうですね <= whywaita: ok
-    // whywaita: まあのちのちハンバーガーメニューとかやりそうだし使いそう感はあるけどね
-    // hogas: 今使ってなかったら雛形だけ残しておくと良さそう(boolのやつだけ消す)
-    // mizdra: React.Component<Props> でState使わないことを明示的できるというテクニックがある <= whywaita: yosasou
-    // hogas: Propsが空でStateはあるときってPropsのとこは `{}` とかにするんですか
-    // mizdra: いつもそんな感じでやってます
     return (
       <div style={growStyle}>
         <AppBar position="static" color="primary">

@@ -2,11 +2,7 @@ import React, { CSSProperties } from "react";
 import { withStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
-import { LineIcon } from "react-share"; // mizdra: ここでエラー出てるの直したい
-// whywaita: ここコントリビュートする必要ある https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react-share/index.d.ts
-// mizdra: 本当だ, つらい
-// whywaita: 結構残ってるんだよね
-// mizdra: プロジェクトの中で自分で型定義拡張できないか試してみます
+import { LineIcon } from "react-share";
 
 function getModalStyle() {
   const top = 50;
@@ -24,21 +20,13 @@ interface Props {
   onClose(): void;
   cart: Menu[];
   classes: {
-    paper: string; // mizdra: いちいちcreateStylesで書いたやつをPropsに加えないといけないの面倒ですね… 仕方なさそうだけど…
+    paper: string;
   };
 }
-// whywaita: ↑こうかくとOrdarModalを呼ぶ部分でclassesを渡さないといけなくならない？
-// mizdra: 実はwithStylesで上手いこと `classes` を取り除いた型を要求するコンポーネントを返すようになっています
-// whywaita: なるほどね〜〜〜 :innocent:
 
 interface State {
   open: boolean;
 }
-
-// mizdra: material-uiのthemeの設定を参照しているせいでエラーでている
-// whywaita: コピってきたらはやそう
-// hogas: `theme` どっからきたのだろう ~`Theme` ？~ あぁそういうことか
-// mizdra: https://material-ui.com/guides/typescript/#augmenting-your-props-using-withstyles かな
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -59,7 +47,6 @@ class OrdarModal extends React.Component<Props, State> {
     };
   }
 
-  // hogas: `=`, `=>` 不要そう
   orderMsg = (name: string) => {
     // nullチェックする
     return "https://line.me/R/msg/text?" + name + "をお願いします";
@@ -91,8 +78,6 @@ class OrdarModal extends React.Component<Props, State> {
   }
 }
 
-// mizdra: `StyledOrdarModal` の部分でマウスカーソルをホバーさせて型を確認すると `Pick` 型を使って `paper` を取り除いていることが分かる
-// whywaita: ほんとだ
 const StyledOrdarModal = withStyles(styles)(OrdarModal);
 
 export { StyledOrdarModal };
