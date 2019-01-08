@@ -1,15 +1,22 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import * as axios from "axios";
+import React, { CSSProperties } from "react";
 import { Menu } from "./types";
-import { MenuCard } from "./card";
+import { MenuCard } from "./menu_card";
+
+interface Props {
+  addCartFunc(arg0: string): void;
+}
 
 interface State {
   menus: Menu[];
 }
 
-export class Menus extends React.Component<any, State> {
-  constructor(props: any) {
+const styles: CSSProperties = {
+  // TODO: stickyになったら直す
+  marginTop: 70
+};
+
+export class Menus extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       menus: []
@@ -17,26 +24,28 @@ export class Menus extends React.Component<any, State> {
   }
 
   private baseURL = "https://api.shokujin.jp/menu/";
-  private getMenu = (time: string) => 
+  private getMenu = (time: string) =>
     fetch(this.baseURL + time)
       .then(res => res.json())
-      .then(json => this.setState({menus: json as Menu[]}));
+      .then(json => this.setState({ menus: json as Menu[] }));
 
   componentDidMount() {
-    this.getMenu("today")
+    this.getMenu("today");
   }
 
   render() {
     return (
-      <div>
+      <div style={styles}>
         {this.state.menus.map((menu: Menu) => {
-          return <MenuCard key={menu.id}
-                           name={menu.name}
-                           price={menu.price}
-                           category={menu.category}
-                           description={menu.description} />
+          return (
+            <MenuCard
+              key={menu.id}
+              menu={menu}
+              addCartFunc={this.props.addCartFunc}
+            />
+          );
         })}
       </div>
-    )
+    );
   }
 }

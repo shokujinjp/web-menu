@@ -1,37 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React, { CSSProperties } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import yellow from "@material-ui/core/colors/yellow";
 
-const styles = {
-  root: {
-    flexGrow: 1
-  }
+const rootStyle: CSSProperties = {
+  flexGrow: 0
 };
 
-interface Props {
-  classes: {
-    root: any;
-  };
+const growStyle: CSSProperties = {
+  flexGrow: 1
+};
+
+export default class TitleBar extends React.Component {
+  render() {
+    return (
+      <div style={growStyle}>
+        <AppBar position="fixed" color="primary">
+          <Toolbar>
+            <Typography variant="h4" color="inherit" style={growStyle}>
+              今日の食神
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
-
-function TitleBar(props: Props) {
-  const { classes } = props;
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <Typography variant="h4" color="inherit">
-            今日の食神
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-}
-
-export default withStyles(styles)(TitleBar);
