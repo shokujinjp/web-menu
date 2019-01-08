@@ -32,11 +32,11 @@ class FabButton extends React.Component<Props> {
     super(props);
   }
 
-  calcCartItem(cart: { [key: string]: number }) {
+  calcCartItem() {
     var count: number = 0;
 
-    for (var key in cart) {
-      count += cart[key];
+    for (var key in this.props.cart) {
+      count += this.props.cart[key];
     }
 
     return count;
@@ -49,7 +49,7 @@ class FabButton extends React.Component<Props> {
       <div>
         <Badge
           className={classes.fab}
-          badgeContent={this.calcCartItem(this.props.cart)}
+          badgeContent={this.calcCartItem()}
           color="secondary"
           classes={{ badge: classes.badge }}
         >

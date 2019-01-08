@@ -37,16 +37,20 @@ class Main extends React.Component<{}, State> {
   }
 
   addCart = (menuName: string) => {
-    if (typeof this.state.cart[""] != "undefined") {
-      delete this.state.cart[""];
+    var c: { [key: string]: number } = this.state.cart;
+
+    if (typeof c[""] != "undefined") {
+      delete c[""];
     }
 
-    if (typeof this.state.cart[menuName] == "undefined") {
+    if (typeof c[menuName] == "undefined") {
       // is zero
-      this.state.cart[menuName] = 1;
+      c[menuName] = 1;
     } else {
-      this.state.cart[menuName] += 1;
+      c[menuName] += 1;
     }
+
+    this.setState({ cart: c });
   };
 
   handleOrdarModalOpen = () => {
