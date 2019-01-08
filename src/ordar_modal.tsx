@@ -19,6 +19,8 @@ interface Props {
   open: boolean;
   onClose(): void;
   cart: { [key: string]: number };
+  seatId: string;
+
   classes: {
     paper: string;
     textField: string;
@@ -64,7 +66,7 @@ class OrdarModal extends React.Component<Props, State> {
   }
 
   defaultMsg(cart: { [key: string]: number }) {
-    var msg = "席番号: \nメニュー:\n";
+    var msg = "席番号: " + this.props.seatId + "\nメニュー:\n";
 
     for (var menuName in cart) {
       msg += "- " + menuName + "を" + cart[menuName] + "個\n";

@@ -102,6 +102,7 @@ class Main extends React.Component<{}, State> {
           open={true}
           onClose={this.handleOrdarModalClose}
           cart={this.state.cart}
+          seatId={this.state.seatId}
         />
       );
     }
