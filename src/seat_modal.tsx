@@ -21,19 +21,19 @@ function getModalStyle() {
 
 // TODO: APIで持つべき
 const listSeatId = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "A",
-  "B",
-  "C"
+  "座席:  1",
+  "座席:  2",
+  "座席:  3",
+  "座席:  4",
+  "座席:  5",
+  "座席:  6",
+  "座席:  7",
+  "座席:  8",
+  "座席:  9",
+  "座席: 10",
+  "座席:  A",
+  "座席:  B",
+  "座席:  C"
 ];
 
 const styles = (theme: Theme) =>
@@ -46,12 +46,12 @@ const styles = (theme: Theme) =>
       padding: theme.spacing.unit * 1,
       outline: "none"
     },
-    textField: {
-      marginLeft: 1,
-      marginRight: 1
+    overrideListItemRoot: {
+      // textAlign: "right" // 選択済みアイテム
     },
-    menu: {
-      width: "100%"
+    overridePopoverPaper: {
+      minWidth: "90%" // 白枠
+      // textAlign: "right"
     }
   });
 
@@ -60,8 +60,8 @@ interface Props {
   onClose(): void;
   classes: {
     paper: string;
-    textField: string;
-    menu: string;
+    overrideListItemRoot: string;
+    overridePopoverPaper: string;
   };
 
   seatId: string;
@@ -126,6 +126,7 @@ class SeatModal extends React.Component<Props, State> {
               aria-controls="lock-menu"
               aria-label=""
               onClick={this.handleClickListItem}
+              classes={{ root: classes.overrideListItemRoot }}
             >
               <ListItemText primary={listSeatId[this.state.selectedIndex]} />
             </ListItem>
@@ -135,13 +136,13 @@ class SeatModal extends React.Component<Props, State> {
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={this.handleClose}
+            classes={{ paper: classes.overridePopoverPaper }}
           >
             {listSeatId.map((option, index) => (
               <MenuItem
                 key={option}
                 selected={index === this.state.selectedIndex}
                 onClick={event => this.handleMenuItemClick(event, index)}
-                className={classes.menu}
               >
                 {option}
               </MenuItem>
