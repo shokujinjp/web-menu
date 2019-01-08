@@ -7,7 +7,7 @@ import Badge from "@material-ui/core/Badge";
 const styles = (theme: Theme) =>
   createStyles({
     fab: {
-      position: "absolute",
+      position: "fixed",
       bottom: theme.spacing.unit * 2,
       right: theme.spacing.unit * 2
     },
