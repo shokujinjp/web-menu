@@ -35,7 +35,7 @@ const styles = (theme: Theme) =>
   createStyles({
     paper: {
       position: "absolute",
-      width: "70%",
+      width: "90%",
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing.unit * 1,
@@ -56,9 +56,9 @@ class OrdarModal extends React.Component<Props, State> {
     };
   }
 
-  defaultMsg(menus: Menu[]) {
+  defaultMsg(cart: Menu[]) {
     var msg = "席番号: \nメニュー:\n";
-    menus.map((menu: Menu) => {
+    cart.map((menu: Menu) => {
       msg += "- " + menu.name + "\n";
     });
 
