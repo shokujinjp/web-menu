@@ -20,7 +20,22 @@ function getModalStyle() {
   };
 }
 
-const listSeatId = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C"];
+// TODO: APIで持つべき
+const listSeatId = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "A",
+  "B",
+  "C"
+];
 
 const styles = (theme: Theme) =>
   createStyles({
