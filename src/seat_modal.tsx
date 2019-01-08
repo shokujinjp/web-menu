@@ -7,7 +7,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { Z_FILTERED } from "zlib";
 
 function getModalStyle() {
   const top = 50;
@@ -52,7 +51,7 @@ const styles = (theme: Theme) =>
       marginRight: 1
     },
     menu: {
-      width: "90%"
+      width: "100%"
     }
   });
 
@@ -142,6 +141,7 @@ class SeatModal extends React.Component<Props, State> {
                 key={option}
                 selected={index === this.state.selectedIndex}
                 onClick={event => this.handleMenuItemClick(event, index)}
+                className={classes.menu}
               >
                 {option}
               </MenuItem>

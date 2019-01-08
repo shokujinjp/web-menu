@@ -116,7 +116,7 @@ class OrdarModal extends React.Component<Props, State> {
                 style={nonGrowStyle}
                 // onClick={() => window.location.reload()}
               >
-                <a href="/">カートをクリアする</a>
+                <a href="/">文章をクリアする</a>
               </Typography>
 
               <div style={growStyle} />
@@ -126,9 +126,7 @@ class OrdarModal extends React.Component<Props, State> {
                 id="simple-modal-description"
                 style={nonGrowStyle}
               >
-                <a href={this.TolineMsgURL(this.state.msg)}>
-                  LINEで注文する (LINEが開きます)
-                </a>
+                <a href={this.TolineMsgURL(this.state.msg)}>LINEで注文する</a>
               </Typography>
             </div>
           </div>
