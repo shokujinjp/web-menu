@@ -114,7 +114,6 @@ class OrdarModal extends React.Component<Props, State> {
                 variant="body2"
                 id="simple-modal-description"
                 style={nonGrowStyle}
-                // onClick={() => window.location.reload()}
               >
                 <a href="/">文章をクリアする</a>
               </Typography>
