@@ -3,7 +3,6 @@ import { withStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import TextField from "@material-ui/core/TextField";
-import { LineIcon } from "react-share";
 
 function getModalStyle() {
   const top = 50;

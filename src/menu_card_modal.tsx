@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
 
 function getModalStyle() {
   const top = 50;
@@ -83,7 +82,11 @@ class MenuCardModal extends React.Component<Props, State> {
   handleSubmit(event: React.MouseEvent<HTMLElement, MouseEvent>) {
     const inputValue: number = parseInt(this.state.menuNum);
 
-    for (var _i = 0; _i < inputValue; _i++) {
+    this.addCartNum(inputValue);
+  }
+
+  addCartNum(num: number) {
+    for (var _i = 0; _i < num; _i++) {
       this.props.addCartFunc(this.props.menu);
     }
 
@@ -105,17 +108,55 @@ class MenuCardModal extends React.Component<Props, State> {
             <Typography variant="h6" id="modal-title">
               {this.props.menu.name}の個数
             </Typography>
-            <TextField
-              id="set-num"
-              label="個数を入力"
-              className={classes.textField}
-              fullWidth
-              value={this.state.menuNum}
-              type="number"
-              onChange={e => this.handleMenuNum(e)}
-              margin="none"
-              variant="outlined"
-            />
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                marginLeft: 2,
+                marginRight: 2
+              }}
+            >
+              <Button
+                variant="contained"
+                className={classes.button}
+                style={{ flexGrow: 1 }}
+                onClick={() => this.addCartNum(1)}
+              >
+                1個
+              </Button>
+
+              <Button
+                variant="contained"
+                className={classes.button}
+                style={{ flexGrow: 1 }}
+                onClick={() => this.addCartNum(2)}
+              >
+                2個
+              </Button>
+
+              <Button
+                variant="contained"
+                className={classes.button}
+                style={{ flexGrow: 1 }}
+                onClick={() => this.addCartNum(3)}
+              >
+                3個
+              </Button>
+
+              <TextField
+                id="set-num"
+                label="個数を入力"
+                className={classes.textField}
+                value={this.state.menuNum}
+                type="number"
+                onChange={e => this.handleMenuNum(e)}
+                margin="none"
+                variant="outlined"
+                style={{ flexGrow: 1, marginTop: 2 }}
+              />
+            </div>
 
             <div style={{ display: "flex" }}>
               <div style={growStyle} />
@@ -126,7 +167,7 @@ class MenuCardModal extends React.Component<Props, State> {
                 style={nonGrowStyle}
                 onClick={e => this.handleSubmit(e)}
               >
-                カートに入れる
+                数を指定して入力
               </Button>
             </div>
           </div>
