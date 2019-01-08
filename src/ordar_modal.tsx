@@ -111,7 +111,7 @@ class OrdarModal extends React.Component<Props, State> {
 
             <div style={{ display: "flex" }}>
               <Typography
-                variant="h6"
+                variant="body2"
                 id="simple-modal-description"
                 style={nonGrowStyle}
                 // onClick={() => window.location.reload()}
@@ -122,7 +122,7 @@ class OrdarModal extends React.Component<Props, State> {
               <div style={growStyle} />
 
               <Typography
-                variant="h6"
+                variant="body2"
                 id="simple-modal-description"
                 style={nonGrowStyle}
               >
