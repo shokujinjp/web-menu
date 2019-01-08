@@ -3,11 +3,11 @@ import * as ReactDOM from "react-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import yellow from "@material-ui/core/colors/yellow";
 
-import { Menu } from "./types";
 import { Menus } from "./menus";
 import { StyledOrdarModal } from "./ordar_modal";
 import { StyledFabButton } from "./fab";
 import TitleBar from "./title_bar";
+import { StyledSeatModal } from "./seat_modal";
 
 const theme = createMuiTheme({
   typography: {
@@ -23,7 +23,9 @@ const theme = createMuiTheme({
 
 interface State {
   cart: { [key: string]: number };
+  seatId: string;
   renderOrdarModal: boolean;
+  renderSeatModal: boolean;
 }
 
 class Main extends React.Component<{}, State> {
@@ -32,7 +34,9 @@ class Main extends React.Component<{}, State> {
 
     this.state = {
       cart: { "": 0 },
-      renderOrdarModal: false
+      seatId: "",
+      renderOrdarModal: false,
+      renderSeatModal: false
     };
   }
 
@@ -61,7 +65,37 @@ class Main extends React.Component<{}, State> {
     this.setState({ renderOrdarModal: false });
   };
 
+  handleModalOpen = () => {
+    if (this.state.seatId === "") {
+      this.setState({ renderSeatModal: true });
+    }
+    this.setState({ renderOrdarModal: true });
+  };
+
+  handleSeatModalOpen = () => {
+    this.setState({ renderSeatModal: true });
+  };
+
+  handleSeatModalClose = () => {
+    this.setState({ renderSeatModal: false });
+  };
+
+  updateSeatId = (inputSeatId: string) => {
+    this.setState({ seatId: inputSeatId });
+  };
+
   _renderOrdarModal() {
+    if (this.state.renderSeatModal == true) {
+      return (
+        <StyledSeatModal
+          open={true}
+          onClose={this.handleSeatModalClose}
+          seatId={this.state.seatId}
+          updateSeatIdFunc={this.updateSeatId}
+        />
+      );
+    }
+
     if (this.state.renderOrdarModal == true) {
       return (
         <StyledOrdarModal
@@ -79,7 +113,7 @@ class Main extends React.Component<{}, State> {
         <TitleBar />
         <Menus addCartFunc={this.addCart} />
         <StyledFabButton
-          handleModalOpen={this.handleOrdarModalOpen}
+          handleModalOpen={this.handleModalOpen}
           cart={this.state.cart}
         />
         {this._renderOrdarModal()}
