@@ -6,6 +6,7 @@ import yellow from "@material-ui/core/colors/yellow";
 import { Menu } from "./types";
 import { Menus } from "./menus";
 import { StyledOrdarModal } from "./ordar_modal";
+import { StyledFabButton } from "./fab";
 import TitleBar from "./title_bar";
 
 const theme = createMuiTheme({
@@ -64,12 +65,9 @@ class Main extends React.Component<{}, State> {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <TitleBar
-          cart={this.state.cart}
-          handleModalOpen={this.handleOrdarModalOpen}
-        />
+        <TitleBar />
         <Menus addCartFunc={this.addCart} />
-
+        <StyledFabButton handleModalOpen={this.handleOrdarModalOpen} />
         {this._renderOrdarModal()}
       </MuiThemeProvider>
     );

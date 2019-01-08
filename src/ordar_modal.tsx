@@ -57,7 +57,6 @@ class OrdarModal extends React.Component<Props, State> {
   }
 
   defaultMsg(menus: Menu[]) {
-    // nullチェックする
     var msg = "席番号: \nメニュー:\n";
     menus.map((menu: Menu) => {
       msg += "- " + menu.name + "\n";
@@ -69,7 +68,6 @@ class OrdarModal extends React.Component<Props, State> {
   }
 
   TolineMsgURL(msg: string) {
-    // nullチェックする
     return "https://line.me/R/msg/text?" + encodeURIComponent(msg);
   }
 
