@@ -110,6 +110,15 @@ class OrdarModal extends React.Component<Props, State> {
             />
 
             <div style={{ display: "flex" }}>
+              <Typography
+                variant="h6"
+                id="simple-modal-description"
+                style={nonGrowStyle}
+                // onClick={() => window.location.reload()}
+              >
+                <a href="/">カートをクリアする</a>
+              </Typography>
+
               <div style={growStyle} />
 
               <Typography
