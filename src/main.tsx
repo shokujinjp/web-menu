@@ -67,7 +67,10 @@ class Main extends React.Component<{}, State> {
       <MuiThemeProvider theme={theme}>
         <TitleBar />
         <Menus addCartFunc={this.addCart} />
-        <StyledFabButton handleModalOpen={this.handleOrdarModalOpen} />
+        <StyledFabButton
+          handleModalOpen={this.handleOrdarModalOpen}
+          cart={this.state.cart}
+        />
         {this._renderOrdarModal()}
       </MuiThemeProvider>
     );
