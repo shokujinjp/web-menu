@@ -20,6 +20,7 @@ interface Props {
   onClose(): void;
   cart: { [key: string]: number };
   seatId: string;
+  isExistItemInCartFunc(obj: { [key: string]: number }): boolean;
 
   classes: {
     paper: string;
@@ -66,6 +67,10 @@ class OrdarModal extends React.Component<Props, State> {
   }
 
   defaultMsg(cart: { [key: string]: number }) {
+    if (!this.props.isExistItemInCartFunc(cart)) {
+      return "メニューが登録されていません";
+    }
+
     var msg = "席番号: " + this.props.seatId + "\nメニュー:\n";
 
     for (var menuName in cart) {
@@ -125,7 +130,16 @@ class OrdarModal extends React.Component<Props, State> {
                 id="simple-modal-description"
                 style={nonGrowStyle}
               >
-                <a href={this.TolineMsgURL(this.state.msg)}>LINEで注文する</a>
+                {() => {
+                  if (this.props.isExistItemInCartFunc(this.props.cart)) {
+                    return "aaaa";
+                  }
+                }}
+                {this.props.isExistItemInCartFunc(this.props.cart) ? (
+                  <a href={this.TolineMsgURL(this.state.msg)}>LINEで注文する</a>
+                ) : (
+                  <del>LINEで注文する</del>
+                )}
               </Typography>
             </div>
           </div>

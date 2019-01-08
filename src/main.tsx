@@ -40,10 +40,20 @@ class Main extends React.Component<{}, State> {
     };
   }
 
+  isExistItemInCart(c: { [key: string]: number }): boolean {
+    // if cart in item => true
+    if (typeof c[""] != "undefined") {
+      return false;
+    }
+
+    return true;
+  }
+
   addCart = (menuName: string) => {
     var c: { [key: string]: number } = this.state.cart;
 
     if (typeof c[""] != "undefined") {
+      // first exec
       delete c[""];
     }
 
@@ -103,6 +113,7 @@ class Main extends React.Component<{}, State> {
           onClose={this.handleOrdarModalClose}
           cart={this.state.cart}
           seatId={this.state.seatId}
+          isExistItemInCartFunc={this.isExistItemInCart}
         />
       );
     }
