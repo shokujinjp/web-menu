@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 });
 
 interface State {
-  cart: Menu[];
+  cart: { [key: string]: number };
   renderOrdarModal: boolean;
 }
 
@@ -31,15 +31,22 @@ class Main extends React.Component<{}, State> {
     super(props);
 
     this.state = {
-      cart: [],
+      cart: { "": 0 },
       renderOrdarModal: false
     };
   }
 
-  addCart = (menu: Menu) => {
-    this.setState({
-      cart: this.state.cart.concat(menu)
-    });
+  addCart = (menuName: string) => {
+    if (typeof this.state.cart[""] != "undefined") {
+      delete this.state.cart[""];
+    }
+
+    if (typeof this.state.cart[menuName] == "undefined") {
+      // is zero
+      this.state.cart[menuName] = 1;
+    } else {
+      this.state.cart[menuName] += 1;
+    }
   };
 
   handleOrdarModalOpen = () => {

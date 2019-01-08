@@ -3,7 +3,7 @@ import { Menu } from "./types";
 import { MenuCard } from "./menu_card";
 
 interface Props {
-  addCartFunc(arg0: Menu): void;
+  addCartFunc(arg0: string): void;
 }
 
 interface State {

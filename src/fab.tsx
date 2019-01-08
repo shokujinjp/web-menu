@@ -23,7 +23,7 @@ interface Props {
     badge: string;
   };
 
-  cart: Menu[];
+  cart: { [key: string]: number };
   handleModalOpen(): void;
 }
 
@@ -31,6 +31,17 @@ class FabButton extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
+
+  calcCartItem(cart: { [key: string]: number }) {
+    var count: number = 0;
+
+    for (var key in cart) {
+      count += cart[key];
+    }
+
+    return count;
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -38,7 +49,7 @@ class FabButton extends React.Component<Props> {
       <div>
         <Badge
           className={classes.fab}
-          badgeContent={this.props.cart.length}
+          badgeContent={this.calcCartItem(this.props.cart)}
           color="secondary"
           classes={{ badge: classes.badge }}
         >

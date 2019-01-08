@@ -18,7 +18,7 @@ function getModalStyle() {
 interface Props {
   open: boolean;
   onClose(): void;
-  cart: Menu[];
+  cart: { [key: string]: number };
   classes: {
     paper: string;
     textField: string;
@@ -63,11 +63,12 @@ class OrdarModal extends React.Component<Props, State> {
     };
   }
 
-  defaultMsg(cart: Menu[]) {
+  defaultMsg(cart: { [key: string]: number }) {
     var msg = "席番号: \nメニュー:\n";
-    cart.map((menu: Menu) => {
-      msg += "- " + menu.name + "\n";
-    });
+
+    for (var menuName in cart) {
+      msg += "- " + menuName + "を" + cart[menuName] + "個\n";
+    }
 
     msg += "をお願いします。";
 

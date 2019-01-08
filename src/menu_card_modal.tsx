@@ -47,7 +47,7 @@ interface Props {
   open: boolean;
   menu: Menu;
   onClose(): void;
-  addCartFunc(arg0: Menu): void;
+  addCartFunc(arg0: string): void;
 
   classes: {
     paper: string;
@@ -87,7 +87,7 @@ class MenuCardModal extends React.Component<Props, State> {
 
   addCartNum(num: number) {
     for (var _i = 0; _i < num; _i++) {
-      this.props.addCartFunc(this.props.menu);
+      this.props.addCartFunc(this.props.menu.name);
     }
 
     this.props.onClose();

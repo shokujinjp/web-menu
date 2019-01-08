@@ -8,7 +8,7 @@ import { StyledMenuCardModal } from "./menu_card_modal";
 
 interface CardProps {
   menu: Menu;
-  addCartFunc(arg0: Menu): void;
+  addCartFunc(arg0: string): void;
 }
 
 interface CardState {
