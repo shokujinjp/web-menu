@@ -15,7 +15,7 @@ export default class TitleBar extends React.Component {
   render() {
     return (
       <div style={growStyle}>
-        <AppBar position="static" color="primary">
+        <AppBar position="fixed" color="primary">
           <Toolbar>
             <Typography variant="h4" color="inherit" style={growStyle}>
               今日の食神

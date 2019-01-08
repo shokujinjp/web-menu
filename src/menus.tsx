@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { CSSProperties } from "react";
 import { Menu } from "./types";
 import { MenuCard } from "./menu_card";
 
@@ -9,6 +9,11 @@ interface Props {
 interface State {
   menus: Menu[];
 }
+
+const styles: CSSProperties = {
+  // TODO: stickyになったら直す
+  marginTop: 70
+};
 
 export class Menus extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -30,7 +35,7 @@ export class Menus extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div style={styles}>
         {this.state.menus.map((menu: Menu) => {
           return (
             <MenuCard
