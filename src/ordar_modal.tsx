@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { CSSProperties } from "react";
 import { withStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
@@ -46,6 +46,14 @@ const styles = (theme: Theme) =>
       marginRight: 1
     }
   });
+
+const nonGrowStyle: CSSProperties = {
+  flexGrow: 0
+};
+
+const growStyle: CSSProperties = {
+  flexGrow: 1
+};
 
 class OrdarModal extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -99,10 +107,16 @@ class OrdarModal extends React.Component<Props, State> {
               variant="outlined"
             />
 
-            <div>
-              <Typography variant="subtitle1" id="simple-modal-description">
+            <div style={{ display: "flex" }}>
+              <div style={growStyle} />
+
+              <Typography
+                variant="h6"
+                id="simple-modal-description"
+                style={nonGrowStyle}
+              >
                 <a href={this.TolineMsgURL(this.state.msg)}>
-                  LINEで送る (食神アカウントを選択して送信してください)
+                  LINEで注文する (LINEが開きます)
                 </a>
               </Typography>
             </div>

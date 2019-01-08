@@ -36,6 +36,10 @@ const styles = (theme: Theme) =>
     }
   });
 
+const nonGrowStyle: CSSProperties = {
+  flexGrow: 0
+};
+
 const growStyle: CSSProperties = {
   flexGrow: 1
 };
@@ -113,12 +117,13 @@ class MenuCardModal extends React.Component<Props, State> {
               variant="outlined"
             />
 
-            <div style={growStyle}>
+            <div style={{ display: "flex" }}>
+              <div style={growStyle} />
               <Button
                 variant="contained"
                 color="primary"
                 className={classes.button}
-                style={growStyle}
+                style={nonGrowStyle}
                 onClick={e => this.handleSubmit(e)}
               >
                 カートに入れる
