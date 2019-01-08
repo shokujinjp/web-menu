@@ -4,6 +4,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 import { Menu } from "./types";
+import { StyledMenuCardModal } from "./menu_card_modal";
 
 interface CardProps {
   menu: Menu;
@@ -11,12 +12,37 @@ interface CardProps {
 }
 
 interface CardState {
-  renderModal: boolean;
+  renderMenuCardModal: boolean;
 }
 
 export class MenuCard extends React.Component<CardProps, CardState> {
   constructor(props: CardProps) {
     super(props);
+
+    this.state = {
+      renderMenuCardModal: false
+    };
+  }
+
+  handleMenuCardModalOpen = () => {
+    this.setState({ renderMenuCardModal: true });
+  };
+
+  handleMenuCardModalClose = () => {
+    this.setState({ renderMenuCardModal: false });
+  };
+
+  _renderMenuCardModal() {
+    if (this.state.renderMenuCardModal == true) {
+      return (
+        <StyledMenuCardModal
+          open={true}
+          onClose={this.handleMenuCardModalClose}
+          addCartFunc={this.props.addCartFunc}
+          menu={this.props.menu}
+        />
+      );
+    }
   }
 
   render() {
@@ -30,7 +56,7 @@ export class MenuCard extends React.Component<CardProps, CardState> {
 
     return (
       <div>
-        <Card onClick={() => this.props.addCartFunc(this.props.menu)}>
+        <Card onClick={() => this.handleMenuCardModalOpen()}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               {des}
@@ -43,6 +69,8 @@ export class MenuCard extends React.Component<CardProps, CardState> {
             </Typography>
           </CardContent>
         </Card>
+
+        {this._renderMenuCardModal()}
       </div>
     );
   }
