@@ -83,7 +83,7 @@ class OrdarModal extends React.Component<Props, State> {
   }
 
   TolineMsgURL(msg: string) {
-    return "https://line.me/R/msg/text?" + encodeURIComponent(msg);
+    return "line://msg/text/?" + encodeURIComponent(msg);
   }
 
   render() {
