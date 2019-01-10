@@ -26,6 +26,7 @@ interface State {
   seatId: string;
   renderOrdarModal: boolean;
   renderSeatModal: boolean;
+  isLogin: firebase.auth.UserCredential;
 }
 
 class Main extends React.Component<{}, State> {
@@ -36,7 +37,8 @@ class Main extends React.Component<{}, State> {
       cart: { "": 0 },
       seatId: "",
       renderOrdarModal: false,
-      renderSeatModal: false
+      renderSeatModal: false,
+      isLogin: {}
     };
   }
 
@@ -94,6 +96,10 @@ class Main extends React.Component<{}, State> {
     this.setState({ seatId: inputSeatId });
   };
 
+  updateisLogin = (result: object) => {
+    this.setState({ isLogin: result });
+  };
+
   _renderOrdarModal() {
     if (this.state.renderSeatModal == true) {
       return (
@@ -122,7 +128,10 @@ class Main extends React.Component<{}, State> {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <TitleBar />
+        <TitleBar
+          updateisLoginFunc={this.updateisLogin}
+          isLogin={this.state.isLogin}
+        />
         <Menus addCartFunc={this.addCart} />
         <StyledFabButton
           handleModalOpen={this.handleModalOpen}

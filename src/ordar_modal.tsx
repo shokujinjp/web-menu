@@ -130,11 +130,6 @@ class OrdarModal extends React.Component<Props, State> {
                 id="simple-modal-description"
                 style={nonGrowStyle}
               >
-                {() => {
-                  if (this.props.isExistItemInCartFunc(this.props.cart)) {
-                    return "aaaa";
-                  }
-                }}
                 {this.props.isExistItemInCartFunc(this.props.cart) ? (
                   <a href={this.TolineMsgURL(this.state.msg)}>LINEで注文する</a>
                 ) : (
