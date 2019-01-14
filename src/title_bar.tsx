@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
-import TwitterButton from "./twitter_button":
+import TwitterButton from "./twitter_button";
 
 const rootStyle: CSSProperties = {
   flexGrow: 0
@@ -14,7 +14,7 @@ const growStyle: CSSProperties = {
 };
 
 interface Props {
-  isLogin: object
+  isLogin: firebase.auth.UserCredential
   updateisLoginFunc(arg0: object): void
 }
 

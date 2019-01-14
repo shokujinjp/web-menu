@@ -1,10 +1,11 @@
 import * as React from "react";
 import { TwitterIcon } from "react-share";
 
-import firebase, { providerTwitter } from "./utils/config";
+import firebaseApp, { providerTwitter } from "./utils/config";
+import firebase from "firebase";
 
 interface Props {
-  isLogin: {};
+  isLogin: firebase.auth.UserCredential;
   updateisLoginFunc(arg0: object): void;
 }
 
@@ -14,8 +15,8 @@ class TwitterButton extends React.Component<Props> {
   }
 
   handleLogin() {
-    firebase.auth().signInWithPopup(providerTwitter);
-    firebase
+    firebaseApp.auth().signInWithPopup(providerTwitter);
+    firebaseApp
       .auth()
       .getRedirectResult()
       .then(result => {
@@ -27,7 +28,7 @@ class TwitterButton extends React.Component<Props> {
   }
 
   handleLogout() {
-    firebase
+    firebaseApp
       .auth()
       .signOut()
       .then(result => {
@@ -47,12 +48,8 @@ class TwitterButton extends React.Component<Props> {
           </div>
         ) : (
           <div onClick={() => this.handleLogout()}>
-            <img
-              src={
-                this.props.isLogin.additionalUserInfo.profile
-                  .profile_image_url_https
-              }
-            />
+            {/* TODO: Twitterユーザのアイコンを出せばわかりやすいかも？ */}
+            {JSON.stringify(this.props.isLogin)}
           </div>
         )}
       </div>

@@ -1,4 +1,4 @@
-import * as firebase from "firebase";
+import firebase from "firebase";
 import "firebase/auth";
 
 const apiKey = process.env.API_KEY;
@@ -13,7 +13,8 @@ const fbconfig = {
 
 const providerTwitter = new firebase.auth.TwitterAuthProvider();
 
-export default (!firebase.apps.length
+const firebaseApp = (!firebase.apps.length
   ? firebase.initializeApp(fbconfig)
   : firebase.app());
+export default firebaseApp
 export { providerTwitter };

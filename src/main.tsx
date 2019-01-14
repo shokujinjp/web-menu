@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import firebase from "firebase"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import yellow from "@material-ui/core/colors/yellow";
 
@@ -38,7 +39,7 @@ class Main extends React.Component<{}, State> {
       seatId: "",
       renderOrdarModal: false,
       renderSeatModal: false,
-      isLogin: {}
+      isLogin: {} as firebase.auth.UserCredential
     };
   }
 
@@ -96,7 +97,7 @@ class Main extends React.Component<{}, State> {
     this.setState({ seatId: inputSeatId });
   };
 
-  updateisLogin = (result: object) => {
+  updateisLogin = (result: firebase.auth.UserCredential) => {
     this.setState({ isLogin: result });
   };
 
