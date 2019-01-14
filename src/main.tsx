@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import firebase from "firebase"
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import yellow from "@material-ui/core/colors/yellow";
 
@@ -26,6 +27,7 @@ interface State {
   seatId: string;
   renderOrdarModal: boolean;
   renderSeatModal: boolean;
+  isLogin: firebase.auth.UserCredential;
 }
 
 class Main extends React.Component<{}, State> {
@@ -36,7 +38,8 @@ class Main extends React.Component<{}, State> {
       cart: { "": 0 },
       seatId: "",
       renderOrdarModal: false,
-      renderSeatModal: false
+      renderSeatModal: false,
+      isLogin: {} as firebase.auth.UserCredential
     };
   }
 
@@ -94,6 +97,10 @@ class Main extends React.Component<{}, State> {
     this.setState({ seatId: inputSeatId });
   };
 
+  updateisLogin = (result: firebase.auth.UserCredential) => {
+    this.setState({ isLogin: result });
+  };
+
   _renderOrdarModal() {
     if (this.state.renderSeatModal == true) {
       return (
@@ -122,7 +129,10 @@ class Main extends React.Component<{}, State> {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <TitleBar />
+        <TitleBar
+          updateisLoginFunc={this.updateisLogin}
+          isLogin={this.state.isLogin}
+        />
         <Menus addCartFunc={this.addCart} />
         <StyledFabButton
           handleModalOpen={this.handleModalOpen}

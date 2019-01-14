@@ -23,6 +23,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-share": "^2.1.1",
     "axios": "^0.18.0",
+    "firebase": "^5.7.2",
     "material-ui": "^0.20.2",
     "react": "^15.4.0 || ^16.0.0",
     "react-dom": "^15.4.0 || ^16.0.0",
