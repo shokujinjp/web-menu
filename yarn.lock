@@ -943,13 +943,6 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@types/firebase@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@types/firebase/-/firebase-3.2.1.tgz#17c1c8fee7485ab09668d2461e34540bdf44b3b1"
-  integrity sha512-G8XgHMu2jHlElfc2xVNaYP50F0qrqeTCjgeG1v5b4SRwWG4XKC4fCuEdVZuZaMRmVygcnbRZBAo9O7RsDvmkGQ==
-  dependencies:
-    firebase "*"
-
 "@types/jest@^23.3.9":
   version "23.3.10"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
@@ -3456,7 +3449,7 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-firebase@*, firebase@^5.7.2:
+firebase@^5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-5.7.2.tgz#53593b4b507a3045f75feca620491cfb8a54518b"
   integrity sha512-RrjQ9q4dM9Q97vd+ucfuOAjby4vsjdW350ohy+Rw0lsA4Y+bJ0RAVnYimXqGfPfoIAErRJj6HctutE4gg1G2xw==
