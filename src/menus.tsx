@@ -23,7 +23,7 @@ export class Menus extends React.Component<Props, State> {
     };
   }
 
-  private baseURL = "https://api.shokujin.jp/menu/";
+  private baseURL = "http://api.shokujin.jp/menu/";
   private getMenu = (time: string) =>
     fetch(this.baseURL + time)
       .then(res => res.json())
