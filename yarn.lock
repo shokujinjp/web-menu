@@ -981,9 +981,9 @@
     indefinite-observable "^1.0.1"
 
 "@types/material-ui@^0.21.5":
-  version "0.21.5"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.5.tgz#a93cc4a551f7c07a0ec54e52b4ad7994a5a9450e"
-  integrity sha512-TfS3WQEsu4oCJC/+qOTf2t5UjthxsE4LKWnY0yR8+2G+TJ9zO+2dlkH5b5uEIX7ftJM7vn/ZqihZCYCTKNjDCg==
+  version "0.21.7"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.7.tgz#2a4ab77a56a16adef044ba607edde5214151a5d8"
+  integrity sha512-OxGu+Jfm3d8IVYu5w2cqosSFU+8KJYCeVjw1jLZ7DzgoE7KpSFFpbDJKWhV1FAf/HEQXzL1IpX6PmLwINlE4Xg==
   dependencies:
     "@types/react" "*"
     "@types/react-addons-linked-state-mixin" "*"
