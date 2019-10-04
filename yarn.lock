@@ -1976,9 +1976,9 @@ classnames@^2.2.5:
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/clean-deep/-/clean-deep-3.0.2.tgz#1b7096822f289cc491ca6d85af5c028cbb22fc23"
-  integrity sha512-sLUtFxYtHc3jM9pmwyYXOLln0nnQ1OhFrefQ7nqUlva1crHDbi4gVO+nnMSm5jztFXIRDMt+kMNh0mOscbARow==
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/clean-deep/-/clean-deep-3.0.5.tgz#e3b8429535e0629656b30f58f888d4de0e9ee637"
+  integrity sha512-mDcvVb534gnGuv2jTw2yMG+RGHrpzNZLAp/qqy46CMHr2hDkfUT17kdrVlKvvrV0GkJ9dqMUICnwMq9Vwbu19w==
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isplainobject "^4.0.6"
