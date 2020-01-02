@@ -2014,9 +2014,9 @@ classnames@^2.2.5:
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-deep@^3.0.2:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/clean-deep/-/clean-deep-3.0.5.tgz#e3b8429535e0629656b30f58f888d4de0e9ee637"
-  integrity sha512-mDcvVb534gnGuv2jTw2yMG+RGHrpzNZLAp/qqy46CMHr2hDkfUT17kdrVlKvvrV0GkJ9dqMUICnwMq9Vwbu19w==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/clean-deep/-/clean-deep-3.2.0.tgz#344210fc09aba0c1a73fadffb61dc1740707ffbc"
+  integrity sha512-YA2SBZnGnbq1MnV17UsjKERWJiT/cTPjCtT7xSxZ/DTcPQGdfWKjlP/FfjKXTyfkMGUhNvOD1Oq7IzTbHfUv9g==
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isplainobject "^4.0.6"
