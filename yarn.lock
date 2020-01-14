@@ -3620,9 +3620,9 @@ git-remote-origin-url@^2.0.0:
     pify "^2.3.0"
 
 git-repo-info@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/git-repo-info/-/git-repo-info-2.0.0.tgz#2e7a68ba3d0253e8e885c4138f922e6561de59bb"
-  integrity sha512-5wiwo0Pert7y8YtAC6Gym+ekeKojBospUEaQIPjK/djKvmONk7ZDpM986Q2OP5LEuwlmOom9Ji0XsGe78EFBeQ==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/git-repo-info/-/git-repo-info-2.1.1.tgz#220ffed8cbae74ef8a80e3052f2ccb5179aed058"
+  integrity sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==
 
 gitconfiglocal@^1.0.0:
   version "1.0.0"
