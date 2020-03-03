@@ -924,10 +924,10 @@
     path-exists "^4.0.0"
     readdirp "^3.3.0"
 
-"@netlify/config@^0.1.12", "@netlify/config@^0.1.14", "@netlify/config@^0.1.7":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.14.tgz#de17eae09b95ac8f8c89395ede9acb8b508d65f2"
-  integrity sha512-hiIIO8+ET8EBxKrQ0JvjQkdvK7TK2rcul1bUvzk7Rkha1gkC2JmtBCPHYaShIYsv20J0IOPdVb8fiZVHm4Rq1w==
+"@netlify/config@^0.1.12", "@netlify/config@^0.1.14", "@netlify/config@^0.1.21":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.23.tgz#1f2f2e1adff3de0dc3fb27dab4308635bdb04433"
+  integrity sha512-gq6FYlxYMpgur79VoHEXj/07b7fAmMmw6A2svVM8nc1H1YF3VSau1PXFus2G1nHuk3g4pdcenfvT/KxaZWR6Rg==
   dependencies:
     chalk "^3.0.0"
     configorama "^0.3.6"
@@ -936,12 +936,13 @@
     filter-obj "^2.0.1"
     find-up "^4.1.0"
     indent-string "^4.0.0"
-    is-plain-obj "^2.0.0"
+    is-plain-obj "^2.1.0"
     js-yaml "^3.13.1"
-    make-dir "^3.0.0"
+    make-dir "^3.0.2"
     map-obj "^4.1.0"
+    omit.js "^1.0.2"
     path-exists "^4.0.0"
-    resolve "^1.12.0"
+    resolve "^1.15.1"
 
 "@netlify/open-api@^0.13.0":
   version "0.13.1"
@@ -5964,6 +5965,11 @@ is-plain-obj@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.0.0.tgz#7fd1a7f1b69e160cde9181d2313f445c68aa2679"
   integrity sha512-EYisGhpgSCwspmIuRHGjROWTon2Xp8Z7U03Wubk/bTL5TTRC5R1rGVgyjzBrk9+ULdH6cRD06KRcw/xfqhVYKQ==
 
+is-plain-obj@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
+
 is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
@@ -7160,7 +7166,7 @@ make-dir@^2.0.0:
     pify "^4.0.1"
     semver "^5.6.0"
 
-make-dir@^3.0.0:
+make-dir@^3.0.0, make-dir@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-3.0.2.tgz#04a1acbf22221e1d6ef43559f43e05a90dbb4392"
   integrity sha512-rYKABKutXa6vXTXhoV18cBE7PaewPXHe/Bdq4v+ZLMhxbWApkFFplT0LcbMW+6BbjnQXzZ/sAvSE/JdguApG5w==
@@ -7585,12 +7591,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
 netlify-cli@^2.2.1:
-  version "2.35.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.35.0.tgz#91859bf9ea448066826e0cdd51d1b8407ce24d11"
-  integrity sha512-ZvtklsaUXdVknQLzocmVuGAhbJ8kTJt9sRqwntCYe5w78SwPmDNlxWRk2xwfxxMVtdzT7iqLqhPQP8zg0EtO0g==
+  version "2.36.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.36.0.tgz#150d2b97dc5ac6f577cefb743f6e353ecaba1e5c"
+  integrity sha512-lmk5W1q6Vgdtv/bv0dR5/wTe4a8zw/09g1lbPeDoScNyiMytcUlh96PwX2euj9qG/MukPs70C8M1MbKe2ItH8w==
   dependencies:
     "@netlify/build" "^0.1.7"
-    "@netlify/config" "^0.1.7"
+    "@netlify/config" "^0.1.21"
     "@netlify/zip-it-and-ship-it" "^0.3.1"
     "@oclif/command" "^1.5.18"
     "@oclif/config" "^1.13.2"
@@ -7666,6 +7672,7 @@ netlify-cli@^2.2.1:
     update-notifier "^2.5.0"
     uuid "^3.3.3"
     wait-port "^0.2.2"
+    winston "^3.2.1"
     wrap-ansi "^6.0.0"
     write-file-atomic "^3.0.0"
 
@@ -9799,14 +9806,7 @@ resolve@1.1.7:
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
 
-resolve@1.x, resolve@^1.1.5, resolve@^1.12.0, resolve@^1.14.2, resolve@^1.3.2, resolve@^1.4.0:
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.14.2.tgz#dbf31d0fa98b1f29aa5169783b9c290cb865fea2"
-  integrity sha512-EjlOBLBO1kxsUxsKjLt7TAECyKW6fOh1VRkykQkKGzcBbjjPIxBqGh0jf7GJ3k/f5mxMqW3htMD3WdTUVtW8HQ==
-  dependencies:
-    path-parse "^1.0.6"
-
-resolve@^1.10.0:
+resolve@1.x, resolve@^1.1.5, resolve@^1.10.0, resolve@^1.12.0, resolve@^1.14.2, resolve@^1.15.1, resolve@^1.3.2, resolve@^1.4.0:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.15.1.tgz#27bdcdeffeaf2d6244b95bb0f9f4b4653451f3e8"
   integrity sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
