@@ -924,7 +924,7 @@
     path-exists "^4.0.0"
     readdirp "^3.3.0"
 
-"@netlify/config@^0.1.12", "@netlify/config@^0.1.14", "@netlify/config@^0.1.21":
+"@netlify/config@^0.1.14", "@netlify/config@^0.1.21":
   version "0.1.23"
   resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.23.tgz#1f2f2e1adff3de0dc3fb27dab4308635bdb04433"
   integrity sha512-gq6FYlxYMpgur79VoHEXj/07b7fAmMmw6A2svVM8nc1H1YF3VSau1PXFus2G1nHuk3g4pdcenfvT/KxaZWR6Rg==
@@ -943,6 +943,28 @@
     omit.js "^1.0.2"
     path-exists "^4.0.0"
     resolve "^1.15.1"
+
+"@netlify/config@^0.4.1":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.4.3.tgz#0df7fb46a998b34a41d79db09185be50aa241bb0"
+  integrity sha512-OFA2otX2eF8YPo+zXZVYt0TJez8p6iqmFz7RL2zd0LO+KZKnTWD/Ie1nslwqU0TYBmFx42pfg5+agdWKwiuFjg==
+  dependencies:
+    array-flat-polyfill "^1.0.1"
+    chalk "^3.0.0"
+    deepmerge "^4.2.2"
+    dot-prop "^5.2.0"
+    execa "^3.4.0"
+    filter-obj "^2.0.1"
+    find-up "^4.1.0"
+    indent-string "^4.0.0"
+    is-plain-obj "^2.1.0"
+    js-yaml "^3.13.1"
+    map-obj "^4.1.0"
+    omit.js "^1.0.2"
+    p-filter "^2.1.0"
+    path-exists "^4.0.0"
+    toml "^3.0.0"
+    yargs "^15.3.0"
 
 "@netlify/open-api@^0.13.0":
   version "0.13.1"
@@ -4217,7 +4239,7 @@ execa@^2.0.3:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-execa@^3.3.0:
+execa@^3.3.0, execa@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-3.4.0.tgz#c08ed4550ef65d858fac269ffc8572446f37eb89"
   integrity sha512-r9vdGQk4bmCuK1yKQu1KTwcT2zwfWdbdaXfCtAh+5nU/4fSX+JAb7vZGvI5naJrQlvONrEB20jeruESI69530g==
@@ -7662,11 +7684,11 @@ netlify-cli@^2.2.1:
     write-file-atomic "^3.0.0"
 
 netlify-redirect-parser@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-2.2.0.tgz#76f000a6eefb3d18756d75f4bd1a5d55f9d648c0"
-  integrity sha512-FILkBKm7WWyXtWkS5o9PWSBOQG03wKns0w9MnitiaVOaVSJk++61yIHFzd+j3rArlll2CwdsKTklJ3Wo08xLqA==
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-2.3.0.tgz#9df42b5bce73762b4008dd570edb20cd009570d2"
+  integrity sha512-IIeEriUGmsS3VfiRQ3DwlRCozhzRDqNcoepAIIjj1II86smKq3Qkx18ly5acaruTozdtxA1/3ZwkR6rNbiNMuw==
   dependencies:
-    "@netlify/config" "^0.1.12"
+    "@netlify/config" "^0.4.1"
 
 netlify-redirector@^0.1.0:
   version "0.1.0"
@@ -10828,6 +10850,11 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
+toml@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/toml/-/toml-3.0.0.tgz#342160f1af1904ec9d204d03a5d61222d762c5ee"
+  integrity sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==
+
 tough-cookie@^2.3.3, tough-cookie@^2.3.4, tough-cookie@^2.5.0, tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
@@ -11613,6 +11640,14 @@ yargs-parser@^16.1.0:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
+yargs-parser@^18.1.0:
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-18.1.0.tgz#1b0ab1118ebd41f68bb30e729f4c83df36ae84c3"
+  integrity sha512-o/Jr6JBOv6Yx3pL+5naWSoIA2jJ+ZkMYQG/ie9qFbukBe4uzmBatlXFOiu/tNKRWEtyf+n5w7jc/O16ufqOTdQ==
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-parser@^9.0.2:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
@@ -11671,6 +11706,23 @@ yargs@^15.1.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^16.1.0"
+
+yargs@^15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.3.0.tgz#403af6edc75b3ae04bf66c94202228ba119f0976"
+  integrity sha512-g/QCnmjgOl1YJjGsnUg2SatC7NUYEiLXJqxNOQU9qSpjzGtGXda9b+OKccr1kLTy8BN9yqEyqfq5lxlwdc13TA==
+  dependencies:
+    cliui "^6.0.0"
+    decamelize "^1.2.0"
+    find-up "^4.1.0"
+    get-caller-file "^2.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^4.2.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^18.1.0"
 
 yarn@^1.21.1:
   version "1.22.1"
