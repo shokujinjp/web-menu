@@ -7648,9 +7648,9 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
 netlify-cli@^2.2.1:
-  version "2.38.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.38.0.tgz#d29970c337434d554793d73d618dccc7891842f8"
-  integrity sha512-p1EEN//9TbJfG7avud4gRIbA8bdXxYmC/1tzix5rpOxgPByP9uoX9jc3E22weC0sVF97re1APiYQms+uZv40ZQ==
+  version "2.40.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.40.0.tgz#239ae8dbe9920e92030a890594d36322d3fa98f3"
+  integrity sha512-Jf7OCSmiNZOD51nEB07AZJ6+XTYokClCtu1ufnm7/Mw3xdb5wXWzYUlanrKs1+nStlxRmh/R8E70tksBdokTDA==
   dependencies:
     "@netlify/build" "^0.1.84"
     "@netlify/config" "^0.4.1"
