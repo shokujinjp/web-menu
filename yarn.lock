@@ -3137,11 +3137,6 @@ core-js@^2.4.0, core-js@^2.5.0, core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
 
-core-js@^3.3.6:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
-  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
-
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -7132,15 +7127,15 @@ lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 log-process-errors@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/log-process-errors/-/log-process-errors-5.1.1.tgz#9d9f46d7d90cdc23030ab9bda8c2763a872b5732"
-  integrity sha512-Eb90xoU3AC0XtIiMBF4J8SUNHt8sPZNz6GEsP7kn0gcfCD/tqp21i6yFzpRvOxBaWu6ySgSQNRc8FmEq+OG6Tg==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/log-process-errors/-/log-process-errors-5.1.2.tgz#5d0f195309d9c725a010587527ade00db1fe1646"
+  integrity sha512-s4kmYHrzj543xUAIxc/cpmoiGZcbFwKRqqwO49DbgH+hFoSTswi0sYZuJKjUUc73b49MRPQGl0CNl8cx98/Wtg==
   dependencies:
     chalk "^3.0.0-beta.2"
-    core-js "^3.3.6"
     figures "^3.0.0"
     filter-obj "^2.0.1"
     jest-validate "^24.9.0"
+    map-obj "^4.1.0"
     moize "^5.4.4"
     supports-color "^7.1.0"
 
