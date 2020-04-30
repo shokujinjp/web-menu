@@ -262,9 +262,9 @@
     js-tokens "^4.0.0"
 
 "@babel/parser@^7.0.0":
-  version "7.9.4"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.4.tgz#68a35e6b0319bbc014465be43828300113f2f2e8"
-  integrity sha512-bC49otXX6N0/VYhgOMh4gnP26E9xnDZK3TmbNpxYzzz9BQLBosQwfyOe9/cXUU3txYhTzLCbcqd5c8y/OmCjHA==
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.6.tgz#3b1bbb30dabe600cd72db58720998376ff653bc7"
+  integrity sha512-AoeIEJn8vt+d/6+PXDRPaksYhnlbMIiejioBZvvMQsOjW/JYK6k/0dKnvvP3EhK5GfMBWDPtrxRtegWdAcdq9Q==
 
 "@babel/parser@^7.4.4", "@babel/parser@^7.8.3":
   version "7.8.3"
@@ -1015,9 +1015,9 @@
     moize "^5.4.5"
 
 "@netlify/open-api@^0.13.2":
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.13.3.tgz#5941135c5b7b1ee04327c1572048d367cb66aad8"
-  integrity sha512-eke9J5vz+EJfdDonKpWxQpRBbvZC2Xolmo6shykHMCFyuYpvGbclefaPf+M8Pf+0oC9u50lr1EStSv2fwb44hA==
+  version "0.13.4"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.13.4.tgz#4db6b6538447b2f8ab1dbf4d51c23cbe2ac16818"
+  integrity sha512-HMBKoBfAtW9NB1MoVxfNAQwrDg2hfQx9pYxwq1OdoPCc0tp7/vn5vzKs4uaa0ZFC0HxH04uThd5HGA9DGa1iew==
 
 "@netlify/run-utils@^0.1.1":
   version "0.1.1"
@@ -1026,10 +1026,10 @@
   dependencies:
     execa "^3.4.0"
 
-"@netlify/zip-it-and-ship-it@^0.4.0-14":
-  version "0.4.0-14"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.4.0-14.tgz#113303b929d58e4f5a124c464cc2f25acc7a4304"
-  integrity sha512-R27SCZr1UvPYyhKgvKnBOZLg+JVuzRf0zaqLRwCnRo8fcDcEaeB70flPs/BXK0m2QLGT9kk+sZhSBWJz8WqoNA==
+"@netlify/zip-it-and-ship-it@^0.4.0-14", "@netlify/zip-it-and-ship-it@^0.4.0-15":
+  version "0.4.0-15"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.4.0-15.tgz#b2f7c9c3ddd8f919d2b488dc4d8fa48d74decc98"
+  integrity sha512-B4EQu4ctjTFe8ZpXF/cEzNebwXpUBCcpTYPVqBk/Ki0IFdXa833o2T/ABHgRY4xZX5i/V+CCsZXj5K8Vrc7dhw==
   dependencies:
     archiver "^3.0.0"
     common-path-prefix "^2.0.0"
@@ -7781,12 +7781,12 @@ netlify-redirector@^0.2.0:
   integrity sha512-5SSUu++MXvE/tik90Hx7lzISBHCl5k4TqpVeTuBEoHp5K7uWitY7c3MjPNiY3kB83GSZiTNLbuIY7bo6mpyU3Q==
 
 netlify@^4.0.5:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.1.0.tgz#82b0d0ae1b2d11e4d78b06cfc9917a6876a8533d"
-  integrity sha512-DPc95649hbdUV5jALQwznEyyRiTZeFYDacgM33O3tuvgpyQM7/U/d8Yw4la7R/pGEWVaQqdwoAjAZjY0uIUyIg==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.1.1.tgz#2808ee23de5113980aea5439235b1344b7d8486c"
+  integrity sha512-0b0VSAWbvOFcDLIUwmPdRgwCsLe3j1iF+JRN8okbPnk5Hhg9MLHCgr/pURFKTxULnndUeycdUdIvBPR9tqUY6g==
   dependencies:
     "@netlify/open-api" "^0.13.2"
-    "@netlify/zip-it-and-ship-it" "^0.4.0-14"
+    "@netlify/zip-it-and-ship-it" "^0.4.0-15"
     backoff "^2.5.0"
     clean-deep "^3.3.0"
     filter-obj "^2.0.1"
