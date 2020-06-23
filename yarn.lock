@@ -7540,9 +7540,9 @@ module-definition@^3.3.0:
     node-source-walk "^4.0.0"
 
 moize@^5.4.4, moize@^5.4.5:
-  version "5.4.6"
-  resolved "https://registry.yarnpkg.com/moize/-/moize-5.4.6.tgz#9a7e402462151be3a077c03464b20dc67497e0d0"
-  integrity sha512-gvMOccupuKKD9Yzgda474o/RIl0EIUnCPuNLn9GPo71HJZPhWdzu/RYZQjYRheDMcuJfXifB9ttzAYCrkGKM0A==
+  version "5.4.7"
+  resolved "https://registry.yarnpkg.com/moize/-/moize-5.4.7.tgz#bffa28806441d9f5cf1c4158b67a29413c438e83"
+  integrity sha512-7PZH8QFJ51cIVtDv7wfUREBd3gL59JB0v/ARA3RI9zkSRa9LyGjS1Bdldii2J1/NQXRQ/3OOVOSdnZrCcVaZlw==
   dependencies:
     fast-equals "^1.6.0"
     fast-stringify "^1.1.0"
