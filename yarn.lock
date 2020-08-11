@@ -11538,9 +11538,9 @@ widest-line@^3.1.0:
     string-width "^4.0.0"
 
 windows-release@^3.1.0:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/windows-release/-/windows-release-3.3.1.tgz#cb4e80385f8550f709727287bf71035e209c4ace"
-  integrity sha512-Pngk/RDCaI/DkuHPlGTdIkDiTAnAkyMjoQMZqRsxydNl1qGXNIoZrB7RK8g53F2tEgQBMqQJHQdYZuQEEAu54A==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/windows-release/-/windows-release-3.3.3.tgz#1c10027c7225743eec6b89df160d64c2e0293999"
+  integrity sha512-OSOGH1QYiW5yVor9TtmXKQvt2vjQqbYS+DqmsZw+r7xDwLXEeT3JGW0ZppFmHx4diyXmxt238KFR3N9jzevBRg==
   dependencies:
     execa "^1.0.0"
 
