@@ -1894,9 +1894,9 @@ atob@^2.1.2:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 aws-sdk@^2.689.0:
-  version "2.771.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.771.0.tgz#ff4beb0a04d6ab1ae962c85dfb42e3e9bfe2b93b"
-  integrity sha512-fqNGusCwkdemx3yFqvQbU1+xq/PB2wGq7EQIrrTZx/zxfXUp+7+PnrHzXtViCRghN0tylLghBfWYD4VcVcqi7g==
+  version "2.772.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.772.0.tgz#7a587d0b5059ef377c0c9d858612cf747dfbb618"
+  integrity sha512-am1xrqaQhHbZsSbbZ8l0nRzl4dfCG+HGUAsgNGQp3RGwEZX8Eblge4dGPmg3A1ZyCHAzT1VIWxemOOCiyqJC/A==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3001,10 +3001,15 @@ commander@^3.0.2:
   resolved "https://registry.yarnpkg.com/commander/-/commander-3.0.2.tgz#6837c3fb677ad9933d1cfba42dd14d5117d6b39e"
   integrity sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
 
-commander@^5.0.0, commander@^5.1.0:
+commander@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+
+commander@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
+  integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
 
 common-path-prefix@^2.0.0:
   version "2.0.0"
@@ -6925,12 +6930,12 @@ kuler@^2.0.0:
   integrity sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==
 
 lambda-local@^1.7.1:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/lambda-local/-/lambda-local-1.7.3.tgz#3f7e8e4893184ddf95a731004ee49b75089bf534"
-  integrity sha512-T+iwIkuQT0JvTQhvNBTikLhpEJk3ovNoC33niE4QNmYOUrCOdo86PcPkgppOZl+NJXXHebdPHDJ40zqBJ9VMzg==
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/lambda-local/-/lambda-local-1.7.4.tgz#26247fa8ba6a5226600b4add77cf8d4e6dda89af"
+  integrity sha512-uLrFPGj2//glOgJGLZn8hNTNlhU+eGx0WFRLZxIoC39nfjLRZ1fncHcPK2t5gA2GcvgtGUT2dnw60M8vJAOIkQ==
   dependencies:
     aws-sdk "^2.689.0"
-    commander "^5.1.0"
+    commander "^6.1.0"
     dotenv "^8.2.0"
     winston "^3.2.1"
 
