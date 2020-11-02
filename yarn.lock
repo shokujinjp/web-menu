@@ -1847,9 +1847,9 @@ assign-symbols@^1.0.0:
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
 
 ast-module-types@^2.3.2, ast-module-types@^2.4.0, ast-module-types@^2.6.0, ast-module-types@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/ast-module-types/-/ast-module-types-2.7.0.tgz#916b00caabf1e454549cab3b266cd7ebf7046834"
-  integrity sha512-DXSwT9NPPi3/Yh5h9FIckmXXgws1mwqYJ9LpHbsAisD8InGxEUVEfUKmfIpsUnCeQ1As1q+eIJTodvtOWyROZw==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/ast-module-types/-/ast-module-types-2.7.1.tgz#3f7989ef8dfa1fdb82dfe0ab02bdfc7c77a57dd3"
+  integrity sha512-Rnnx/4Dus6fn7fTqdeLEAn5vUll5w7/vts0RN608yFa6si/rDOUonlIIiwugHBFWjylHjxm9owoSZn71KwG4gw==
 
 astral-regex@^1.0.0:
   version "1.0.0"
