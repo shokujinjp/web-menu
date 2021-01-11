@@ -2376,15 +2376,15 @@ browserify-zlib@^0.2.0:
     pako "~1.0.5"
 
 browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.16.0, browserslist@^4.8.2:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.16.0.tgz#410277627500be3cb28a1bfe037586fbedf9488b"
-  integrity sha512-/j6k8R0p3nxOC6kx5JGAxsnhc9ixaWJfYc+TNTzxg6+ARaESAvQGV7h0uNOB4t+pLQJZWzcrMxXOxjgsCj3dqQ==
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.16.1.tgz#bf757a2da376b3447b800a16f0f1c96358138766"
+  integrity sha512-UXhDrwqsNcpTYJBTZsbGATDxZbiVDsx6UjpmRUmtnP10pr8wAYr5LgFoEFw9ixriQH2mv/NX2SfGzE/o8GndLA==
   dependencies:
-    caniuse-lite "^1.0.30001165"
+    caniuse-lite "^1.0.30001173"
     colorette "^1.2.1"
-    electron-to-chromium "^1.3.621"
+    electron-to-chromium "^1.3.634"
     escalade "^3.1.1"
-    node-releases "^1.1.67"
+    node-releases "^1.1.69"
 
 bs-logger@0.x:
   version "0.2.6"
@@ -2578,10 +2578,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001165:
-  version "1.0.30001173"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001173.tgz#3c47bbe3cd6d7a9eda7f50ac016d158005569f56"
-  integrity sha512-R3aqmjrICdGCTAnSXtNyvWYMK3YtV5jwudbq0T7nN9k4kmE4CBuwPqyJ+KBzepSTh0huivV2gLbSMEzTTmfeYw==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001173:
+  version "1.0.30001174"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001174.tgz#0f2aca2153fd88ceb07a2bb982fc2acb787623c4"
+  integrity sha512-tqClL/4ThQq6cfFXH3oJL4rifFBeM6gTkphjao5kgwMaW9yn0tKgQLAEfKzDwj6HQWCB/aWo8kTFlSvIN8geEA==
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -4046,10 +4046,10 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-electron-to-chromium@^1.3.621:
-  version "1.3.633"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.633.tgz#16dd5aec9de03894e8d14a1db4cda8a369b9b7fe"
-  integrity sha512-bsVCsONiVX1abkWdH7KtpuDAhsQ3N3bjPYhROSAXE78roJKet0Y5wznA14JE9pzbwSZmSMAW6KiKYf1RvbTJkA==
+electron-to-chromium@^1.3.634:
+  version "1.3.635"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.635.tgz#8d1591eeca6b257d380061a2c04f0b3cc6c9e33b"
+  integrity sha512-RRriZOLs9CpW6KTLmgBqyUdnY0QNqqWs0HOtuQGGEMizOTNNn1P7sGRBxARnUeLejOsgwjDyRqT3E/CSst02ZQ==
 
 elf-tools@^1.1.1:
   version "1.1.2"
@@ -7940,7 +7940,7 @@ node-notifier@^5.2.1:
     shellwords "^0.1.1"
     which "^1.3.0"
 
-node-releases@^1.1.67:
+node-releases@^1.1.69:
   version "1.1.69"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.69.tgz#3149dbde53b781610cd8b486d62d86e26c3725f6"
   integrity sha512-DGIjo79VDEyAnRlfSqYTsy+yoHd2IOjJiKUozD2MV2D85Vso6Bug56mb9tT/fY5Urt0iqk01H7x+llAruDR2zA==
