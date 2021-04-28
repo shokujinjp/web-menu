@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  assignees:
+  - whywaita
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: caniuse-lite
+    versions:
+    - 1.0.30001214
+  - dependency-name: electron-to-chromium
+    versions:
+    - 1.3.720
