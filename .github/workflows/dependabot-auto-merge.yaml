@@ -1,7 +1,7 @@
 name: dependabot-auto-merge
 
 on:
-  workflow_run:
+  check_suite:
     types:
       - completed
 
