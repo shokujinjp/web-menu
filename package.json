@@ -8,7 +8,7 @@
     "deploy": "netlify deploy -d dist --prod"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.0.3",
     "jest": "^23.6.0",
     "netlify-cli": "^2.2.1",
     "parcel-bundler": "^1.12.5",
