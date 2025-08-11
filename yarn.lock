@@ -1450,12 +1450,12 @@
     jest-matcher-utils "^27.0.0"
     pretty-format "^27.0.0"
 
-"@types/material-ui@^0.21.12":
-  version "0.21.12"
-  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.12.tgz#208e8b7e49a545bb704fa7e865986afde1b33384"
-  integrity sha512-rBY3iOr5LISKDLAYo3229R79xIPPKSOL2c7FzAFn5dUj38Oe7rQldYedHWsYmkJUeboE9Ipad7ppyJwBzXxrMw==
+"@types/material-ui@^0.21.18":
+  version "0.21.18"
+  resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.21.18.tgz#f47704aa7e3031e5171cc309b1998e5234c2c183"
+  integrity sha512-wGyYlCJaznt0C87Xnqae7v3imh57gsomQvzozsHhZKJHH4QG+i0qE4/h6D4igpXEXr4ooscgclg+O2RIKOP84Q==
   dependencies:
-    "@types/react" "*"
+    "@types/react" "^18"
     "@types/react-addons-linked-state-mixin" "*"
 
 "@types/minimatch@*":
@@ -1531,7 +1531,15 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.43":
+"@types/react@*", "@types/react@^18":
+  version "18.3.23"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.23.tgz#86ae6f6b95a48c418fecdaccc8069e0fbb63696a"
+  integrity sha512-/LDXMQh55EzZQ0uVAZmKKhfENivEvWz6E+EYzh+/MCjMhNsotd+ZHhBGIjFDTi6+fz0OhQQQLbTgdQIxxCsC0w==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.43":
   version "17.0.43"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.43.tgz#4adc142887dd4a2601ce730bc56c3436fdb07a55"
   integrity sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==
